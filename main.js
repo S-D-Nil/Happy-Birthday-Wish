@@ -41,7 +41,7 @@
             setTimeout(() => {
                 gift.style.display = 'none';
                 showCake();
-            }, 400);
+            }, 1200);
         }
 
         // Spectacular Heart & Confetti Burst Effect

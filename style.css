@@ -222,7 +222,7 @@
             border-right: 25px solid transparent;
             border-top: 45px solid var(--c);
             display: inline-block;
-            animation: swing 3s ease-in-out infinite alternate;
+            animation: swing 5s ease-in-out infinite alternate;
             transform-origin: top center;
             animation-delay: var(--d);
             filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.3));
@@ -252,7 +252,7 @@
         .gift-wrapper.opened .gift-box {
             transform: translateY(20px) scale(0.8);
             opacity: 0;
-            transition: all 0.5s ease 0.3s;
+            transition: all 800ms ease 0.5s;
         }
 
         .gift-wrapper.opened .tap-text {
@@ -268,11 +268,7 @@
             filter: drop-shadow(0 0 5px rgba(255, 0, 0, 0.5));
         }
 
-        /* -------------------------------------
-           BIRTHDAY CAKE ANIMATION (from birthday-cake.html)
-           Shown after the gift box is opened. Background stays
-           the gift box's gradient + floating particles.
-           ------------------------------------- */
+        /* BIRTHDAY CAKE ANIMATION */
 
         .cake-scene {
             display: none;
@@ -311,7 +307,7 @@
             height: 35px;
             transform: translateY(-300px);
             backface-visibility: hidden;
-            animation: cakeCandleIn 500ms 6s ease-out forwards;
+            animation: cakeCandleIn 500ms 4s ease-out forwards;
         }
 
         .cake:after,
@@ -345,11 +341,11 @@
         }
 
         .fuego:nth-child(1) {
-            animation: fuego 2s 6.5s infinite;
+            animation: fuego 1s 4s infinite;
         }
 
         .fuego:nth-child(2) {
-            animation: fuego 1.5s 6.5s infinite;
+            animation: fuego 1.5s 4s infinite;
         }
 
         .fuego:nth-child(3) {
