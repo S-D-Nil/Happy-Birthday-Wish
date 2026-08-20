@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday My Love</title>
+    <!-- Importing modern minimal fonts and a beautiful cursive font for romance -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Outfit:wght@300;400;600&family=Playfair+Display:ital,wght@1,600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Festive Bunting -->
+    <div class="bunting-container">
+        <div class="flag" style="--d: 0.1s; --c: #ff4d4d;"></div>
+        <div class="flag" style="--d: 0.2s; --c: #ffd700;"></div>
+        <div class="flag" style="--d: 0.3s; --c: #ffb3c6;"></div>
+        <div class="flag" style="--d: 0.4s; --c: #66ccff;"></div>
+        <div class="flag" style="--d: 0.5s; --c: #ff4d4d;"></div>
+        <div class="flag" style="--d: 0.6s; --c: #ffd700;"></div>
+        <div class="flag" style="--d: 0.7s; --c: #ffb3c6;"></div>
+        <div class="flag" style="--d: 0.8s; --c: #66ccff;"></div>
+        <div class="flag" style="--d: 0.9s; --c: #ff4d4d;"></div>
+        <div class="flag" style="--d: 1.0s; --c: #ffd700;"></div>
+        <div class="flag" style="--d: 1.1s; --c: #ffb3c6;"></div>
+        <div class="flag" style="--d: 1.2s; --c: #66ccff;"></div>
+    </div>
+
+    <!-- Ambient floating particles -->
+    <div class="particles" id="particles"></div>
+
+    <div class="container">
+
+        <!-- Interactive Gift Reveal Screen -->
+        <div class="gift-wrapper" id="giftWrapper" onclick="revealGift()">
+            <div class="gift-box">
+                <div class="gift-ribbon-h"></div>
+                <div class="gift-ribbon-v"></div>
+                <div class="gift-lid"></div>
+                <div class="gift-bow"></div>
+            </div>
+            <div class="tap-text">Tap to open</div>
+        </div>
+
+    </div>
+
+    <!-- Birthday Cake Scene (populated by JS once the gift is opened) -->
+    <div class="cake-scene" id="cakeScene"></div>
+
+    <script src="main.js">
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,387 @@
+        /* Base Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(-45deg, #2b0b30, #61184c, #9c2162, #ff275d, #ffdf85);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            perspective: 1000px;
+        }
+
+        /* Smooth animated gradient background */
+        @keyframes gradientBG {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* Floating Light Particles Background */
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            display: block;
+            pointer-events: none;
+            opacity: 0;
+            animation: floatUp 15s linear infinite;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(110vh) scale(0) rotate(0deg);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 0.8;
+            }
+
+            80% {
+                opacity: 0.8;
+            }
+
+            100% {
+                transform: translateY(-10vh) scale(1.5) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .container {
+            position: relative;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            max-width: 600px;
+            padding: 20px;
+        }
+
+        /* Interactive Initial Screen: Gift Box */
+        .gift-wrapper {
+            cursor: pointer;
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+
+        .gift-wrapper:hover {
+            transform: scale(1.1);
+        }
+
+        .gift-box {
+            position: relative;
+            width: 160px;
+            height: 150px;
+            background: linear-gradient(135deg, #ff4d4d, #cc0000);
+            border-radius: 12px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(255, 255, 255, 0.2);
+            animation: pulseGlow 2s infinite;
+        }
+
+        .gift-lid {
+            position: absolute;
+            top: -25px;
+            left: -10px;
+            width: 180px;
+            height: 45px;
+            background: linear-gradient(135deg, #ff6666, #b30000);
+            border-radius: 8px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+            z-index: 2;
+            transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            transform-origin: bottom right;
+        }
+
+        .gift-ribbon-v {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            transform: translateX(-50%);
+            width: 30px;
+            height: 100%;
+            background: linear-gradient(135deg, #ffd700, #b8860b);
+            z-index: 1;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .gift-ribbon-h {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            width: 100%;
+            height: 30px;
+            background: linear-gradient(135deg, #ffd700, #b8860b);
+            z-index: 1;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .gift-bow {
+            position: absolute;
+            top: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70px;
+            height: 70px;
+            background: radial-gradient(circle, #ffd700, #b8860b);
+            clip-path: polygon(50% 50%, 0 0, 0 100%, 50% 50%, 100% 0, 100% 100%);
+            z-index: 3;
+            transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        .tap-text {
+            margin-top: 50px;
+            font-size: 1.4rem;
+            font-weight: 300;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            animation: fadeInOut 2s infinite;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        @keyframes pulseGlow {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            }
+
+            50% {
+                transform: scale(1.03);
+                box-shadow: 0 20px 50px rgba(255, 77, 77, 0.6);
+            }
+
+            100% {
+                transform: scale(1);
+                box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            }
+        }
+
+        @keyframes fadeInOut {
+
+            0%,
+            100% {
+                opacity: 0.4;
+            }
+
+            50% {
+                opacity: 1;
+            }
+        }
+
+        /* Festive Bunting */
+        .bunting-container {
+            position: absolute;
+            top: -5px;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            z-index: 5;
+            pointer-events: none;
+        }
+
+        .flag {
+            width: 0;
+            height: 0;
+            border-left: 25px solid transparent;
+            border-right: 25px solid transparent;
+            border-top: 45px solid var(--c);
+            display: inline-block;
+            animation: swing 3s ease-in-out infinite alternate;
+            transform-origin: top center;
+            animation-delay: var(--d);
+            filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.3));
+        }
+
+        @keyframes swing {
+            0% {
+                transform: rotate(10deg);
+            }
+
+            100% {
+                transform: rotate(-10deg);
+            }
+        }
+
+        /* Gift opening animations */
+        .gift-wrapper.opened .gift-lid {
+            transform: translateY(-80px) rotate(-15deg) scale(1.1);
+            opacity: 0;
+        }
+
+        .gift-wrapper.opened .gift-bow {
+            transform: translateY(-90px) rotate(15deg) scale(1.1);
+            opacity: 0;
+        }
+
+        .gift-wrapper.opened .gift-box {
+            transform: translateY(20px) scale(0.8);
+            opacity: 0;
+            transition: all 0.5s ease 0.3s;
+        }
+
+        .gift-wrapper.opened .tap-text {
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        /* Confetti Burst Logic Elements */
+        .burst-heart {
+            position: absolute;
+            pointer-events: none;
+            z-index: 100;
+            filter: drop-shadow(0 0 5px rgba(255, 0, 0, 0.5));
+        }
+
+        /* -------------------------------------
+           BIRTHDAY CAKE ANIMATION (from birthday-cake.html)
+           Shown after the gift box is opened. Background stays
+           the gift box's gradient + floating particles.
+           ------------------------------------- */
+
+        .cake-scene {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 15;
+            opacity: 0;
+            transition: opacity 1s ease;
+            pointer-events: none;
+        }
+
+        .cake-scene.active {
+            display: block;
+            opacity: 1;
+        }
+
+        #cake {
+            display: block;
+            position: relative;
+            margin: -10em auto 0 auto;
+        }
+
+        /* Candle */
+        .cake {
+            background: #ffffff;
+            border-radius: 10px;
+            position: absolute;
+            top: 228px;
+            left: 50%;
+            margin-left: -2.4px;
+            margin-top: -8.33333333px;
+            width: 5px;
+            height: 35px;
+            transform: translateY(-300px);
+            backface-visibility: hidden;
+            animation: cakeCandleIn 500ms 6s ease-out forwards;
+        }
+
+        .cake:after,
+        .cake:before {
+            background: rgba(255, 0, 0, 0.4);
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 2.22222222px;
+        }
+
+        .cake:after {
+            top: 25%;
+            left: 0;
+        }
+
+        .cake:before {
+            top: 45%;
+            left: 0;
+        }
+
+        /* Fire */
+        .fuego {
+            border-radius: 100%;
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            margin-left: -2.6px;
+            width: 6.66666667px;
+            height: 18px;
+        }
+
+        .fuego:nth-child(1) {
+            animation: fuego 2s 6.5s infinite;
+        }
+
+        .fuego:nth-child(2) {
+            animation: fuego 1.5s 6.5s infinite;
+        }
+
+        .fuego:nth-child(3) {
+            animation: fuego 1s 6.5s infinite;
+        }
+
+        .fuego:nth-child(4) {
+            animation: fuego 0.5s 6.5s infinite;
+        }
+
+        .fuego:nth-child(5) {
+            animation: fuego 0.2s 6.5s infinite;
+        }
+
+        @keyframes fuego {
+
+            0%,
+            100% {
+                background: rgba(254, 248, 97, 0.5);
+                box-shadow: 0 0 40px 10px rgba(248, 233, 209, 0.2);
+                transform: translateY(0) scale(1);
+            }
+
+            50% {
+                background: rgba(255, 50, 0, 0.1);
+                box-shadow: 0 0 40px 20px rgba(248, 233, 209, 0.2);
+                transform: translateY(-20px) scale(0);
+            }
+        }
+
+        @keyframes cakeCandleIn {
+            to {
+                transform: translateY(0);
+            }
+        }
