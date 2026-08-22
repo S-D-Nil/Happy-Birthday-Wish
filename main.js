@@ -245,6 +245,7 @@
                 </path>
                 <rect x="10" y="475.571" fill="#fefae9" width="180" height="4" />
               </svg>
+              <h1 class="text">Happy Birthday<br>Madam ji</h1>
             `;
 
             cakeScene.classList.add('active');

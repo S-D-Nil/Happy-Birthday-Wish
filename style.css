@@ -1,3 +1,4 @@
+        @import url(https://fonts.googleapis.com/css?family=Lato:300italic);
         /* Base Reset */
         * {
             margin: 0;
@@ -381,3 +382,20 @@
                 transform: translateY(0);
             }
         }
+
+        .text {
+            color: #fffbfb;
+            font-family: 'Lato', sans-serif;
+            font-weight: 400;
+            font-style: italic;
+            text-align: center;
+            margin-top: 150px;
+            font-size: 4em;
+            line-height: 1.5;
+            text-shadow: 8px 8px 10px rgba(0, 5, 0, 0.7);
+
+        }
+
+            h1 {
+                font-size: 1.4em;
+            }
