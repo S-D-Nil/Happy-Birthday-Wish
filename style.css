@@ -1,4 +1,5 @@
         @import url(https://fonts.googleapis.com/css?family=Lato:300italic);
+
         /* Base Reset */
         * {
             margin: 0;
@@ -396,6 +397,32 @@
 
         }
 
-            h1 {
-                font-size: 1.4em;
+        h1 {
+            font-size: 1.4em;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 600px) {
+            body {
+                perspective: 700px;
             }
+
+            .container {
+                transform: scale(0.85);
+            }
+
+            .cake-scene {
+                transform: scale(0.85);
+                transform-origin: center top;
+            }
+
+            .flag {
+                border-left-width: 15px;
+                border-right-width: 15px;
+                border-top-width: 27px;
+            }
+            
+            .text {
+                font-size: 3.5em;
+            }
+        }
