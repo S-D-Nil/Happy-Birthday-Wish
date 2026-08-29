@@ -249,7 +249,67 @@ function showCake() {
             `;
 
     cakeScene.classList.add('active');
+
+    const goAheadButton = document.createElement('button');
+    goAheadButton.type = 'button';
+    goAheadButton.className = 'go-ahead-btn';
+    goAheadButton.textContent = 'Go ahead';
+    goAheadButton.addEventListener('click', goToLetter);
+    document.body.appendChild(goAheadButton);
+
     launchFireworksSequence();
+}
+
+// ===== Cake Scene → Love Letter transition =====
+
+function goToLetter() {
+    const cakeScene = document.getElementById('cakeScene');
+    const goAheadButton = document.querySelector('.go-ahead-btn');
+
+    if (goAheadButton) goAheadButton.remove();
+    if (!cakeScene.classList.contains('active')) return; // guard against double-taps
+
+    cakeScene.style.opacity = '0';        // smooth 1s fade (uses .cake-scene's own transition)
+    cakeScene.style.pointerEvents = 'none';
+
+    setTimeout(() => {
+        cakeScene.classList.remove('active');
+        cakeScene.style.opacity = '';
+        cakeScene.innerHTML = '';
+        showLetter();
+    }, 1000);
+}
+
+// Inject the envelope fresh, on top of the same ambient background
+function showLetter() {
+    const letterScene = document.getElementById('letterScene');
+
+    letterScene.innerHTML = `
+        <div class="envelope-wrapper">
+            <div id="envelope" class="close">
+                <div class="front flap"></div>
+                <div class="front pocket"></div>
+                <div class="letter">
+                    <div class="words line1">To: Crush</div>
+                    <div class="words line2">Dear crush, you are so beautiful</div>
+                    <div class="words line3">That every time i see you</div>
+                    <div class="words line4">my world stops,</div>
+                </div>
+                <div class="hearts">
+                    <div class="heart a1"></div>
+                    <div class="heart a2"></div>
+                    <div class="heart a3"></div>
+                </div>
+            </div>
+        </div>
+    `;
+
+    letterScene.classList.add('active');
+
+    document.getElementById('envelope').addEventListener('click', function () {
+        this.classList.add('open');
+        this.classList.remove('close');
+    });
 }
 // ===== Fireworks Launch Sequence =====
 // Fires on 5 fixed positions across the bottom of the screen, spaced
