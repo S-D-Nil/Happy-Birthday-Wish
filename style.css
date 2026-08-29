@@ -270,6 +270,43 @@
             filter: drop-shadow(0 0 5px rgba(255, 0, 0, 0.5));
         }
 
+        /* Fireworks Launch Effect */
+        .projectile {
+            position: fixed;
+            width: 12px;
+            height: 12px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.8),
+                0 0 30px rgba(255, 255, 255, 0.6), 0 0 40px rgba(255, 255, 255, 0.4);
+            pointer-events: none;
+            z-index: 20;
+        }
+
+        .particule {
+            position: fixed;
+            font-size: 2rem;
+            font-family: 'Arial',sans-serif;
+            font-weight: 700;
+            color: white;
+            transform: scale(0);
+            opacity: 0;
+            pointer-events: none;
+            z-index: 20;
+        }
+
+        .sparkle {
+            position: fixed;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: white;
+            transform: scale(0);
+            opacity: 0;
+            pointer-events: none;
+            z-index: 20;
+        }
+
         /* BIRTHDAY CAKE ANIMATION */
 
         .cake-scene {
@@ -421,7 +458,7 @@
                 border-right-width: 15px;
                 border-top-width: 27px;
             }
-            
+
             .text {
                 font-size: 3.5em;
             }

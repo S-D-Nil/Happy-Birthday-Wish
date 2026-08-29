@@ -1,95 +1,95 @@
-        // Setup Ambient Floating Particles
-        const particlesContainer = document.getElementById('particles');
-        const particleCount = 45;
-        const shapes = ['🎈', '🎉', '🎂', '🎁', '✨', '💖', '🌸', '💫', '❤️'];
+// Setup Ambient Floating Particles
+const particlesContainer = document.getElementById('particles');
+const particleCount = 45;
+const shapes = ['🎈', '🎉', '🎂', '🎁', '✨', '💖', '🌸', '💫', '❤️'];
 
-        for (let i = 0; i < particleCount; i++) {
-            createAmbientParticle();
-        }
+for (let i = 0; i < particleCount; i++) {
+    createAmbientParticle();
+}
 
-        function createAmbientParticle() {
-            const particle = document.createElement('div');
-            particle.innerHTML = shapes[Math.floor(Math.random() * shapes.length)];
-            particle.className = 'particle';
+function createAmbientParticle() {
+    const particle = document.createElement('div');
+    particle.innerHTML = shapes[Math.floor(Math.random() * shapes.length)];
+    particle.className = 'particle';
 
-            // Random properties for organic feel
-            const size = Math.random() * 20 + 10;
-            particle.style.fontSize = size + 'px';
-            particle.style.left = Math.random() * 100 + 'vw';
+    // Random properties for organic feel
+    const size = Math.random() * 20 + 10;
+    particle.style.fontSize = size + 'px';
+    particle.style.left = Math.random() * 100 + 'vw';
 
-            const duration = Math.random() * 15 + 15; // 15s to 30s
-            particle.style.animationDuration = duration + 's';
-            particle.style.animationDelay = (Math.random() * 10 - 5) + 's';
+    const duration = Math.random() * 15 + 15; // 15s to 30s
+    particle.style.animationDuration = duration + 's';
+    particle.style.animationDelay = (Math.random() * 10 - 5) + 's';
 
-            particlesContainer.appendChild(particle);
-        }
+    particlesContainer.appendChild(particle);
+}
 
-        // Logic for Gift Reveal
-        function revealGift() {
-            const gift = document.getElementById('giftWrapper');
+// Logic for Gift Reveal
+function revealGift() {
+    const gift = document.getElementById('giftWrapper');
 
-            // Prevent multiple clicks
-            if (gift.classList.contains('opened')) return;
+    // Prevent multiple clicks
+    if (gift.classList.contains('opened')) return;
 
-            // Add animation class
-            gift.classList.add('opened');
+    // Add animation class
+    gift.classList.add('opened');
 
-            // Trigger spectacular burst
-            triggerBurst(80);
+    // Trigger spectacular burst
+    triggerBurst(80);
 
-            // Once the gift has finished opening, hand off to the cake animation
-            setTimeout(() => {
-                gift.style.display = 'none';
-                showCake();
-            }, 1200);
-        }
+    // Once the gift has finished opening, hand off to the cake animation
+    setTimeout(() => {
+        gift.style.display = 'none';
+        showCake();
+    }, 1200);
+}
 
-        // Spectacular Heart & Confetti Burst Effect
-        function triggerBurst(count) {
-            const burstCount = count || 60;
-            const burstEmojis = ['🎈', '🎉', '✨', '💖', '🎁', '🎊', '❤️'];
-            for (let i = 0; i < burstCount; i++) {
-                const burstItem = document.createElement('div');
-                burstItem.className = 'burst-heart';
-                burstItem.innerHTML = burstEmojis[Math.floor(Math.random() * burstEmojis.length)];
+// Spectacular Heart & Confetti Burst Effect
+function triggerBurst(count) {
+    const burstCount = count || 60;
+    const burstEmojis = ['🎈', '🎉', '✨', '💖', '🎁', '🎊', '❤️'];
+    for (let i = 0; i < burstCount; i++) {
+        const burstItem = document.createElement('div');
+        burstItem.className = 'burst-heart';
+        burstItem.innerHTML = burstEmojis[Math.floor(Math.random() * burstEmojis.length)];
 
-                // Position at center
-                burstItem.style.left = '50%';
-                burstItem.style.top = '50%';
-                burstItem.style.transform = 'translate(-50%, -50%)';
-                burstItem.style.fontSize = (Math.random() * 25 + 15) + 'px';
+        // Position at center
+        burstItem.style.left = '50%';
+        burstItem.style.top = '50%';
+        burstItem.style.transform = 'translate(-50%, -50%)';
+        burstItem.style.fontSize = (Math.random() * 25 + 15) + 'px';
 
-                // Physics calculation for burst
-                const angle = Math.random() * Math.PI * 2;
-                const velocity = Math.random() * 200 + 80;
-                const tx = Math.cos(angle) * velocity;
-                // Add a gravity arc feel by shifting Y negative
-                const ty = Math.sin(angle) * velocity - 150;
+        // Physics calculation for burst
+        const angle = Math.random() * Math.PI * 2;
+        const velocity = Math.random() * 200 + 80;
+        const tx = Math.cos(angle) * velocity;
+        // Add a gravity arc feel by shifting Y negative
+        const ty = Math.sin(angle) * velocity - 150;
 
-                burstItem.animate([
-                    { transform: 'translate(-50%, -50%) scale(0)', opacity: 0 },
-                    { transform: 'translate(-50%, -50%) scale(1.5)', opacity: 1, offset: 0.2 },
-                    { transform: `translate(calc(-50% + ${tx}px), calc(-50% + ${ty}px)) scale(0.8) rotate(${Math.random() * 360}deg)`, opacity: 0 }
-                ], {
-                    duration: Math.random() * 1200 + 1000,
-                    easing: 'cubic-bezier(0.25, 1, 0.5, 1)',
-                    fill: 'forwards'
-                });
+        burstItem.animate([
+            { transform: 'translate(-50%, -50%) scale(0)', opacity: 0 },
+            { transform: 'translate(-50%, -50%) scale(1.5)', opacity: 1, offset: 0.2 },
+            { transform: `translate(calc(-50% + ${tx}px), calc(-50% + ${ty}px)) scale(0.8) rotate(${Math.random() * 360}deg)`, opacity: 0 }
+        ], {
+            duration: Math.random() * 1200 + 1000,
+            easing: 'cubic-bezier(0.25, 1, 0.5, 1)',
+            fill: 'forwards'
+        });
 
-                document.body.appendChild(burstItem);
+        document.body.appendChild(burstItem);
 
-                // Cleanup
-                setTimeout(() => burstItem.remove(), 2500);
-            }
-        }
+        // Cleanup
+        setTimeout(() => burstItem.remove(), 2500);
+    }
+}
 
-        // Inject the birthday cake SVG animation fresh into the DOM so its
-        // internal timed <animate> sequence starts from the moment it's shown,
-        // rather than counting from page load.
-        function showCake() {
-            const cakeScene = document.getElementById('cakeScene');
+// Inject the birthday cake SVG animation fresh into the DOM so its
+// internal timed <animate> sequence starts from the moment it's shown,
+// rather than counting from page load.
+function showCake() {
+    const cakeScene = document.getElementById('cakeScene');
 
-            cakeScene.innerHTML = `
+    cakeScene.innerHTML = `
               <div class="cake">
                 <div class="fuego"></div>
                 <div class="fuego"></div>
@@ -248,5 +248,112 @@
               <h1 class="text">Happy Birthday<br>Madam ji</h1>
             `;
 
-            cakeScene.classList.add('active');
+    cakeScene.classList.add('active');
+    launchFireworksSequence();
+}
+// ===== Fireworks Launch Sequence =====
+// Fires on 5 fixed positions across the bottom of the screen, spaced
+// 100px apart. Round 1 goes left→right, round 2 right→left, then stops.
+
+const fireworkColors = ['#ff6f91', '#ff9671', '#ffc75f', '#f9f871', '#ff4c4c', '#ffcc00'];
+const fireworkMessage = 'I LOVE YOU';
+let fireworkLetterIndex = 0;
+
+function nextFireworkLetter() {
+    const letter = fireworkMessage.charAt(fireworkLetterIndex);
+    fireworkLetterIndex = (fireworkLetterIndex + 1) % fireworkMessage.length;
+    return letter;
+}
+function createFirework(x, y, heightBoost) {
+    const launchHeight = Math.random() * (window.innerHeight / 4) + window.innerHeight / 4 + (heightBoost || 0);
+    const projectile = document.createElement('div');
+    projectile.className = 'projectile';
+    projectile.style.left = x + 'px';
+    projectile.style.top = y + 'px';
+    document.body.appendChild(projectile);
+
+    anime({
+        targets: projectile,
+        translateY: -launchHeight,
+        duration: 1200,
+        easing: 'easeOutQuad',
+        complete: () => {
+            projectile.remove();
+            createFireworkBurst(x, y - launchHeight);
         }
+    });
+}
+
+function createFireworkBurst(x, y) {
+    for (let i = 0; i < 10; i++) createFireworkParticle(x, y, false);
+    for (let i = 0; i < 25; i++) createFireworkParticle(x, y, true);
+}
+
+function createFireworkParticle(x, y, isSparkle) {
+    const el = document.createElement('div');
+    el.className = isSparkle ? 'sparkle' : 'particule';
+
+    if (isSparkle) {
+        el.style.backgroundColor = fireworkColors[Math.floor(Math.random() * fireworkColors.length)];
+    } else {
+        el.textContent = nextFireworkLetter();
+        el.style.color = fireworkColors[Math.floor(Math.random() * fireworkColors.length)];
+    }
+
+    el.style.left = x + 'px';
+    el.style.top = y + 'px';
+    document.body.appendChild(el);
+
+    const angle = Math.random() * Math.PI * 2;
+    const distance = Math.random() * 100 + 100;
+    const duration = Math.random() * 800 + 1200;
+    const fallDistance = Math.random() * 60 + 20;
+    const scale = isSparkle ? Math.random() * 0.5 + 0.5 : Math.random() * 1 + 0.5;
+
+    anime.timeline({
+        targets: el,
+        easing: 'easeOutCubic',
+        duration: duration,
+        complete: () => el.remove()
+    })
+        .add({
+            translateX: Math.cos(angle) * distance,
+            translateY: Math.sin(angle) * distance,
+            scale: [0, scale],
+            opacity: [1, 0.9]
+        })
+        .add({
+            translateY: `+=${fallDistance}px`,
+            opacity: [0.9, 0],
+            easing: 'easeInCubic',
+            duration: duration / 2
+        });
+}
+
+function launchFireworksSequence() {
+    const isMobile = window.innerWidth <= 600; // matches your CSS mobile breakpoint
+    const spacing = isMobile ? window.innerWidth / 8 : 200;
+    const centerX = window.innerWidth / 2;
+    const launchY = window.innerHeight;
+    const positions = [-2, -1, 0, 1, 2].map(i => centerX + i * spacing);
+    const delayBetweenShots = 350;
+    const highRoundHeightBoost = window.innerHeight * 0.28; // reaches candle level
+
+    const fireRound = (order, heightBoost, onRoundDone) => {
+        order.forEach((x, i) => {
+            setTimeout(() => createFirework(x, launchY, heightBoost), i * delayBetweenShots);
+        });
+        if (onRoundDone) {
+            setTimeout(onRoundDone, order.length * delayBetweenShots);
+        }
+    };
+
+    // Round 1: left → right, higher (candle level)
+    fireRound(positions, highRoundHeightBoost, () => {
+        // Round 2: right → left, normal height
+        fireRound([...positions].reverse(), 0, () => {
+            // Round 3: right → left again, higher (candle level)
+            fireRound([...positions].reverse(), highRoundHeightBoost);
+        });
+    });
+}
