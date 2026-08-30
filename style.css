@@ -441,8 +441,8 @@
         /* "Go Ahead" button — appears after the cake finishes baking/icing */
         .go-ahead-btn {
             position: fixed;
-            left: 30px;
-            bottom: 30px;
+            right: 100px;
+            bottom: 25%;
             padding: 12px 28px;
             font-family: 'Outfit', sans-serif;
             font-size: 1rem;
