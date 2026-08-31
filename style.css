@@ -540,6 +540,7 @@
             position: relative;
             width: 400px;
             height: 300px;
+            top: 50px;
             margin: 0 auto;
             border-bottom-left-radius: 8px;
             border-bottom-right-radius: 8px;
@@ -584,39 +585,90 @@
             border-radius: 6px;
             box-shadow: 0 2px 26px rgba(0, 0, 0, 0.12);
             font-family: 'Dancing Script', cursive;
+            font-style: italic;
+            font-weight: 1000;
+            overflow-y: auto;
+            padding: 10px;
         }
 
         #envelope .words {
-            position: absolute;
-            left: 10%;
-            width: 80%;
-            height: 14%;
+            width: 100%;
             background-color: #ffe6e6;
+            padding: 8px 10px;
+            margin-bottom: 8px;
+            border-radius: 4px;
+            line-height: 1.4;
         }
 
         #envelope .words.line1 {
-            top: 10%;
-            width: 20%;
-            height: 7%;
-            font-size: 0.7rem;
+            font-size: 1.2rem;
+            text-align: left;
+            width: fit-content;
+            padding: 5px 10px;
         }
 
         #envelope .words.line2 {
-            top: 30%;
-            font-size: 1.1rem;
-            text-align: center;
+            font-size: 1.5rem;
+            text-align: left;
         }
 
         #envelope .words.line3 {
-            top: 50%;
-            font-size: 1.1rem;
-            text-align: center;
+            font-size: 1.5rem;
+            text-align: left;
         }
 
         #envelope .words.line4 {
-            top: 70%;
-            font-size: 1.1rem;
-            text-align: center;
+            font-size: 1.5rem;
+            text-align: left;
+        }
+
+        #envelope .words.line5 {
+            font-size: 1.5rem;
+            text-align: left;
+        }
+
+        #envelope .words.line6 {
+            font-size: 1.5rem;
+            text-align: left;
+        }
+
+        #envelope .words.line7 {
+            font-size: 1.5rem;
+            text-align: left;
+        }
+
+        #envelope .words.line8 {
+            font-size: 1.5rem;
+            text-align: left;
+        }
+
+        #envelope .words.line9 {
+            font-size: 1.5rem;
+            text-align: left;
+        }
+
+        #envelope .words.line10 {
+            font-size: 1.5rem;
+            text-align: left;
+        }
+
+        #envelope .words.line11 {
+            font-size: 1.4rem;
+            text-align: right;
+            font-style: italic;
+            margin-top: 15px;
+        }
+
+        #envelope .words.line12 {
+            font-size: 1.5rem;
+            text-align: right;
+            font-weight: bold;
+        }
+
+        #envelope .words.line13 {
+            font-size: 1rem;
+            text-align: right;
+            font-weight: bold;
         }
 
         #envelope .hearts {

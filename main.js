@@ -291,10 +291,19 @@ function showLetter() {
                     <div class="front flap"></div>
                     <div class="front pocket"></div>
                     <div class="letter">
-                        <div class="words line1">To: Crush</div>
-                        <div class="words line2">Dear crush, you are so beautiful</div>
-                        <div class="words line3">That every time i see you</div>
-                        <div class="words line4">my world stops,</div>
+                        <div class="words line1">To : Prettiest Girl Ever</div>
+                        <div class="words line2">Dear Madam ,</div>
+                        <div class="words line3">May your eyes always sparkle with beautiful dreams...</div>
+                        <div class="words line4">May your smile shine like a sky full of stars...</div>
+                        <div class="words line5">Your voice has a warmth that makes ordinary moments feel special,</div>
+                        <div class="words line6">and somehow, hearing it makes the world feel a little softer.</div>
+                        <div class="words line7">May this new chapter bring you endless smile,</div>
+                        <div class="words line8">beautiful moments to cherish, and dreams waiting to come true.</div>
+                        <div class="words line9">May another beautiful year of your story begin today...</div>
+                        <div class="words line10">Happy Birthday to someone who makes the world a little more beautiful just by being in it. 🎂✨</div>
+                        <div class="words line11">---Yours ever,</div>
+                        <div class="words line12">Nil</div>
+                        <div class="words line13">.</div>
                     </div>
                     <div class="hearts">
                         <div class="heart a1"></div>
