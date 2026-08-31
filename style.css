@@ -470,7 +470,7 @@
         }
 
         .go-ahead-btn:hover {
-            transform: translateY(-3px) scale(1.05);
+            transform: translateY(-5px) scale(1.05);
             box-shadow: 0 12px 28px rgba(255, 77, 77, 0.5);
         }
 
@@ -504,7 +504,7 @@
 
         .envelope-wrapper {
             position: relative;
-            height: 380px;
+            height: 450px;
         }
 
         .envelope-controls {
@@ -538,11 +538,11 @@
 
         #envelope {
             position: relative;
-            width: 280px;
-            height: 180px;
+            width: 400px;
+            height: 300px;
             margin: 0 auto;
-            border-bottom-left-radius: 6px;
-            border-bottom-right-radius: 6px;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
             background-color: #d9534f;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
             cursor: pointer;
@@ -556,21 +556,21 @@
         }
 
         #envelope .flap {
-            border-left: 140px solid transparent;
-            border-right: 140px solid transparent;
-            border-bottom: 82px solid transparent;
-            border-top: 98px solid #d9534f;
+            border-left: 200px solid transparent;
+            border-right: 200px solid transparent;
+            border-bottom: 137px solid transparent;
+            border-top: 163px solid #d9534f;
             transform-origin: top;
             pointer-events: none;
         }
 
         #envelope .pocket {
-            border-left: 140px solid #f5a3a2;
-            border-right: 140px solid #f5a3a2;
-            border-bottom: 90px solid #ff6f61;
-            border-top: 90px solid transparent;
-            border-bottom-left-radius: 6px;
-            border-bottom-right-radius: 6px;
+            border-left: 200px solid #f5a3a2;
+            border-right: 200px solid #f5a3a2;
+            border-bottom: 150px solid #ff6f61;
+            border-top: 150px solid transparent;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
         }
 
         #envelope .letter {
@@ -621,7 +621,7 @@
 
         #envelope .hearts {
             position: absolute;
-            top: 90px;
+            top: 150px;
             left: 0;
             right: 0;
             z-index: 2;
@@ -694,7 +694,7 @@
         }
 
         #envelope.open .letter {
-            transform: translateY(-100px);
+            transform: translateY(-167px);
             transition: transform 0.4s 0.6s ease, z-index 0.6s;
             z-index: 2;
         }
