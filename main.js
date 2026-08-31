@@ -285,31 +285,49 @@ function showLetter() {
     const letterScene = document.getElementById('letterScene');
 
     letterScene.innerHTML = `
-        <div class="envelope-wrapper">
-            <div id="envelope" class="close">
-                <div class="front flap"></div>
-                <div class="front pocket"></div>
-                <div class="letter">
-                    <div class="words line1">To: Crush</div>
-                    <div class="words line2">Dear crush, you are so beautiful</div>
-                    <div class="words line3">That every time i see you</div>
-                    <div class="words line4">my world stops,</div>
+        <div class="envelope-scene-wrapper">
+            <div class="envelope-wrapper">
+                <div id="envelope" class="close">
+                    <div class="front flap"></div>
+                    <div class="front pocket"></div>
+                    <div class="letter">
+                        <div class="words line1">To: Crush</div>
+                        <div class="words line2">Dear crush, you are so beautiful</div>
+                        <div class="words line3">That every time i see you</div>
+                        <div class="words line4">my world stops,</div>
+                    </div>
+                    <div class="hearts">
+                        <div class="heart a1"></div>
+                        <div class="heart a2"></div>
+                        <div class="heart a3"></div>
+                    </div>
                 </div>
-                <div class="hearts">
-                    <div class="heart a1"></div>
-                    <div class="heart a2"></div>
-                    <div class="heart a3"></div>
-                </div>
+            </div>
+            <div class="envelope-controls">
+                <button type="button" id="open">Open</button>
+                <button type="button" id="reset">Close</button>
             </div>
         </div>
     `;
 
     letterScene.classList.add('active');
 
-    document.getElementById('envelope').addEventListener('click', function () {
-        this.classList.add('open');
-        this.classList.remove('close');
-    });
+    const envelope = document.getElementById('envelope');
+    const openBtn = document.getElementById('open');
+    const closeBtn = document.getElementById('reset');
+
+    function openEnvelope() {
+        envelope.classList.add('open');
+        envelope.classList.remove('close');
+    }
+    function closeEnvelope() {
+        envelope.classList.add('close');
+        envelope.classList.remove('open');
+    }
+
+    envelope.addEventListener('click', openEnvelope);
+    openBtn.addEventListener('click', openEnvelope);
+    closeBtn.addEventListener('click', closeEnvelope);
 }
 // ===== Fireworks Launch Sequence =====
 // Fires on 5 fixed positions across the bottom of the screen, spaced

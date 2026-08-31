@@ -496,9 +496,44 @@
             pointer-events: auto;
         }
 
+        .envelope-scene-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
         .envelope-wrapper {
             position: relative;
             height: 380px;
+        }
+
+        .envelope-controls {
+            text-align: center;
+        }
+
+        .envelope-controls button {
+            font-weight: 800;
+            font-style: normal;
+            transition: all 0.1s linear;
+            appearance: none;
+            background-color: transparent;
+            border: solid 2px #d9534f;
+            border-radius: 4px;
+            color: #fff;
+            display: inline-block;
+            font-size: 14px;
+            text-transform: uppercase;
+            margin: 15px;
+            padding: 10px;
+            line-height: 1em;
+            text-decoration: none;
+            min-width: 120px;
+            cursor: pointer;
+        }
+
+        .envelope-controls button:hover {
+            background-color: #d9534f;
+            color: #fff;
         }
 
         #envelope {
