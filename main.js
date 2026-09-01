@@ -263,6 +263,7 @@ function showCake() {
 // ===== Cake Scene → Love Letter transition =====
 
 function goToLetter() {
+    document.getElementById('bg-audio').play().catch(() => {});
     const cakeScene = document.getElementById('cakeScene');
     const goAheadButton = document.querySelector('.go-ahead-btn');
 
