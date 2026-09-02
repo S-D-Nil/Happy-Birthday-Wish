@@ -540,7 +540,7 @@
             position: relative;
             width: 400px;
             height: 300px;
-            top: 50px;
+            top: 90px;
             margin: 0 auto;
             border-bottom-left-radius: 8px;
             border-bottom-right-radius: 8px;
@@ -796,7 +796,7 @@
         /* Mobile responsiveness */
         @media (max-width: 600px) {
             body {
-                perspective: 700px;
+                perspective: 1000px;
             }
 
             .container {

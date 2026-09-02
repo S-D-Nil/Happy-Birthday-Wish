@@ -37,6 +37,8 @@ function revealGift() {
     // Trigger spectacular burst
     triggerBurst(80);
 
+    document.getElementById('bgMusic').play();
+
     // Once the gift has finished opening, hand off to the cake animation
     setTimeout(() => {
         gift.style.display = 'none';
@@ -263,13 +265,18 @@ function showCake() {
 // ===== Cake Scene → Love Letter transition =====
 
 function goToLetter() {
-    document.getElementById('bg-audio').play().catch(() => {});
+    document.getElementById('bg-audio').play().catch(() => { });
     const cakeScene = document.getElementById('cakeScene');
     const goAheadButton = document.querySelector('.go-ahead-btn');
 
     if (goAheadButton) goAheadButton.remove();
     if (!cakeScene.classList.contains('active')) return; // guard against double-taps
 
+    // Stop birthday music
+    const bgMusic = document.getElementById('bgMusic');
+    bgMusic.pause();
+    bgMusic.currentTime = 0;
+    
     cakeScene.style.opacity = '0';        // smooth 1s fade (uses .cake-scene's own transition)
     cakeScene.style.pointerEvents = 'none';
 
@@ -423,7 +430,7 @@ function launchFireworksSequence() {
     const spacing = isMobile ? window.innerWidth / 8 : 200;
     const centerX = window.innerWidth / 2;
     const launchY = window.innerHeight;
-    const positions = [-2, -1, 0, 1, 2].map(i => centerX + i * spacing);
+    const positions = [-1, 0, 1].map(i => centerX + i * spacing);
     const delayBetweenShots = 350;
     const highRoundHeightBoost = window.innerHeight * 0.28; // reaches candle level
 
@@ -439,9 +446,6 @@ function launchFireworksSequence() {
     // Round 1: left → right, higher (candle level)
     fireRound(positions, highRoundHeightBoost, () => {
         // Round 2: right → left, normal height
-        fireRound([...positions].reverse(), 0, () => {
-            // Round 3: right → left again, higher (candle level)
-            fireRound([...positions].reverse(), highRoundHeightBoost);
-        });
+        fireRound([...positions].reverse(), 0);
     });
 }
