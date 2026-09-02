@@ -360,7 +360,11 @@ function nextFireworkLetter() {
     return letter;
 }
 function createFirework(x, y, heightBoost) {
-    const launchHeight = Math.random() * (window.innerHeight / 4) + window.innerHeight / 4 + (heightBoost || 0);
+   const maxLaunchHeight = Math.max(window.innerHeight - 220, window.innerHeight * 0.4);
+    const launchHeight = Math.min(
+        Math.random() * (window.innerHeight / 4) + window.innerHeight / 4 + (heightBoost || 0),
+        maxLaunchHeight
+    );
     const projectile = document.createElement('div');
     projectile.className = 'projectile';
     projectile.style.left = x + 'px';
@@ -400,7 +404,8 @@ function createFireworkParticle(x, y, isSparkle) {
     document.body.appendChild(el);
 
     const angle = Math.random() * Math.PI * 2;
-    const distance = Math.random() * 100 + 100;
+    const maxReach = Math.min(x, window.innerWidth - x) - 10; // stay inside the screen edges
+    const distance = Math.min(Math.random() * 100 + 100, Math.max(maxReach, 40));
     const duration = Math.random() * 800 + 1200;
     const fallDistance = Math.random() * 60 + 20;
     const scale = isSparkle ? Math.random() * 0.5 + 0.5 : Math.random() * 1 + 0.5;
@@ -426,7 +431,7 @@ function createFireworkParticle(x, y, isSparkle) {
 }
 
 function launchFireworksSequence() {
-    const isMobile = window.innerWidth <= 600; // matches your CSS mobile breakpoint
+    const isMobile = window.innerWidth <= 768; // matches your CSS mobile breakpoint
     const spacing = isMobile ? window.innerWidth / 8 : 200;
     const centerX = window.innerWidth / 2;
     const launchY = window.innerHeight;

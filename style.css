@@ -441,8 +441,8 @@
         /* "Go Ahead" button — appears after the cake finishes baking/icing */
         .go-ahead-btn {
             position: fixed;
-            right: 100px;
-            bottom: 25%;
+            right: 20vh;
+            bottom: 15%;
             padding: 12px 28px;
             font-family: 'Outfit', sans-serif;
             font-size: 1rem;
@@ -799,7 +799,16 @@
                 perspective: 1000px;
             }
 
-            .container {
+            .gift-wrapper {
+                -webkit-tap-highlight-color: transparent;
+            }
+
+            .go-ahead-btn{
+                right: 10vh;
+                bottom: 10%;
+            }
+
+             .container {
                 transform: scale(0.85);
             }
 
@@ -815,7 +824,7 @@
             }
 
             .text {
-                font-size: 3.5em;
+                font-size: 2.5em;
             }
 
             .letter-scene {
