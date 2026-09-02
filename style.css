@@ -794,7 +794,7 @@
         }
 
         /* Mobile responsiveness */
-        @media (max-width: 600px) {
+        @media (max-width: 768px) {
             body {
                 perspective: 1000px;
             }
