@@ -509,6 +509,7 @@
 
         .envelope-controls {
             text-align: center;
+            margin-top: 20px;
         }
 
         .envelope-controls button {
@@ -540,13 +541,14 @@
             position: relative;
             width: 400px;
             height: 300px;
-            top: 90px;
+            top: 100px;
             margin: 0 auto;
             border-bottom-left-radius: 8px;
             border-bottom-right-radius: 8px;
             background-color: #d9534f;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
             cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
         }
 
         #envelope .front {
@@ -589,6 +591,8 @@
             font-weight: 1000;
             overflow-y: auto;
             padding: 10px;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
         }
 
         #envelope .words {
@@ -601,66 +605,66 @@
         }
 
         #envelope .words.line1 {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             text-align: left;
             width: fit-content;
             padding: 5px 10px;
         }
 
         #envelope .words.line2 {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             text-align: left;
         }
 
         #envelope .words.line3 {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             text-align: left;
         }
 
         #envelope .words.line4 {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             text-align: left;
         }
 
         #envelope .words.line5 {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             text-align: left;
         }
 
         #envelope .words.line6 {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             text-align: left;
         }
 
         #envelope .words.line7 {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             text-align: left;
         }
 
         #envelope .words.line8 {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             text-align: left;
         }
 
         #envelope .words.line9 {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             text-align: left;
         }
 
         #envelope .words.line10 {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             text-align: left;
         }
 
         #envelope .words.line11 {
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             text-align: right;
             font-style: italic;
             margin-top: 15px;
         }
 
         #envelope .words.line12 {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             text-align: right;
             font-weight: bold;
         }

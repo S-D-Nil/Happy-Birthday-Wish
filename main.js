@@ -310,7 +310,7 @@ function showLetter() {
                         <div class="words line9">May another beautiful year of your story begin today...</div>
                         <div class="words line10">Happy Birthday to someone who makes the world a little more beautiful just by being in it. 🎂✨</div>
                         <div class="words line11">---Yours ever,</div>
-                        <div class="words line12">Nil</div>
+                        <div class="words line12">Nil..</div>
                         <div class="words line13">.</div>
                     </div>
                     <div class="hearts">
@@ -450,6 +450,7 @@ function launchFireworksSequence() {
 
     // Round 1: left → right, higher (candle level)
     fireRound(positions, highRoundHeightBoost, () => {
+        if (isMobile) return;
         // Round 2: right → left, normal height
         fireRound([...positions].reverse(), 0);
     });
