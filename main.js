@@ -431,7 +431,7 @@ function createFireworkParticle(x, y, isSparkle) {
 }
 
 function launchFireworksSequence() {
-    const isMobile = window.innerWidth <= 768; // matches your CSS mobile breakpoint
+    const isMobile = window.innerWidth <= 640; // matches your CSS mobile breakpoint
     const spacing = isMobile ? window.innerWidth / 8 : 200;
     const centerX = window.innerWidth / 2;
     const launchY = window.innerHeight;
