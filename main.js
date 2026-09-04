@@ -1,6 +1,7 @@
 // Setup Ambient Floating Particles
+const isMobile = window.innerWidth <= 640;
 const particlesContainer = document.getElementById('particles');
-const particleCount = 45;
+const particleCount = isMobile ? 22 : 45;
 const shapes = ['🎈', '🎉', '🎂', '🎁', '✨', '💖', '🌸', '💫', '❤️'];
 
 for (let i = 0; i < particleCount; i++) {
@@ -35,7 +36,7 @@ function revealGift() {
     gift.classList.add('opened');
 
     // Trigger spectacular burst
-    triggerBurst(80);
+    triggerBurst(isMobile ? 40 : 80);
 
     document.getElementById('bgMusic').play();
 
@@ -384,8 +385,10 @@ function createFirework(x, y, heightBoost) {
 }
 
 function createFireworkBurst(x, y) {
-    for (let i = 0; i < 10; i++) createFireworkParticle(x, y, false);
-    for (let i = 0; i < 25; i++) createFireworkParticle(x, y, true);
+    const letterCount = isMobile ? 5 : 10;
+    const sparkleCount = isMobile ? 12 : 25;
+    for (let i = 0; i < letterCount; i++) createFireworkParticle(x, y, false);
+    for (let i = 0; i < sparkleCount; i++) createFireworkParticle(x, y, true);
 }
 
 function createFireworkParticle(x, y, isSparkle) {
