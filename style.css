@@ -20,7 +20,6 @@
             justify-content: center;
             align-items: center;
             overflow: hidden;
-            perspective: 1000px;
         }
 
         /* Smooth animated gradient background */
@@ -509,7 +508,7 @@
 
         .envelope-controls {
             text-align: center;
-            margin-top: 20px;
+            margin-top: 30px;
         }
 
         .envelope-controls button {
@@ -541,8 +540,9 @@
             position: relative;
             width: 400px;
             height: 300px;
-            top: 100px;
+            top: 120px;
             margin: 0 auto;
+            perspective: 1000px;
             border-bottom-left-radius: 8px;
             border-bottom-right-radius: 8px;
             background-color: #d9534f;
@@ -799,9 +799,6 @@
 
         /* Mobile responsiveness */
         @media (max-width: 640px) {
-            body {
-                perspective: 1000px;
-            }
 
             .gift-wrapper {
                 -webkit-tap-highlight-color: transparent;

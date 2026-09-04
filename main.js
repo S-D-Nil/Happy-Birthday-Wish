@@ -36,7 +36,7 @@ function revealGift() {
     gift.classList.add('opened');
 
     // Trigger spectacular burst
-    triggerBurst(isMobile ? 40 : 80);
+    triggerBurst(isMobile ? 22 : 80);
 
     document.getElementById('bgMusic').play();
 
