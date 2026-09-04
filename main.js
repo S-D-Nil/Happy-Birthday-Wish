@@ -3,6 +3,7 @@ const isMobile = window.innerWidth <= 640;
 const particlesContainer = document.getElementById('particles');
 const particleCount = isMobile ? 22 : 45;
 const shapes = ['🎈', '🎉', '🎂', '🎁', '✨', '💖', '🌸', '💫', '❤️'];
+const cakeBuildDuration = 4800;
 
 for (let i = 0; i < particleCount; i++) {
     createAmbientParticle();
@@ -260,7 +261,14 @@ function showCake() {
     goAheadButton.addEventListener('click', goToLetter);
     document.body.appendChild(goAheadButton);
 
-    launchFireworksSequence();
+    if (isMobile) {
+        // Let the cake's SVG build/icing animation finish first — running it
+        // alongside the fireworks' anime.js particles at the same time was
+        // the main cause of jank on low-power phones.
+        setTimeout(launchFireworksSequence, cakeBuildDuration);
+    } else {
+        launchFireworksSequence();
+    }
 }
 
 // ===== Cake Scene → Love Letter transition =====
@@ -277,7 +285,7 @@ function goToLetter() {
     const bgMusic = document.getElementById('bgMusic');
     bgMusic.pause();
     bgMusic.currentTime = 0;
-    
+
     cakeScene.style.opacity = '0';        // smooth 1s fade (uses .cake-scene's own transition)
     cakeScene.style.pointerEvents = 'none';
 
@@ -361,7 +369,7 @@ function nextFireworkLetter() {
     return letter;
 }
 function createFirework(x, y, heightBoost) {
-   const maxLaunchHeight = Math.max(window.innerHeight - 220, window.innerHeight * 0.4);
+    const maxLaunchHeight = Math.max(window.innerHeight - 220, window.innerHeight * 0.4);
     const launchHeight = Math.min(
         Math.random() * (window.innerHeight / 4) + window.innerHeight / 4 + (heightBoost || 0),
         maxLaunchHeight
