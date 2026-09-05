@@ -1,7 +1,13 @@
 // Setup Ambient Floating Particles
 const isMobile = window.innerWidth <= 640;
+// Swap the wish-track for mobile
+const bgMusicEl = document.getElementById('bgMusic');
+if (isMobile) {
+    bgMusicEl.src = 'wish.mp3';
+    bgMusicEl.load();                  
+}
 const particlesContainer = document.getElementById('particles');
-const particleCount = isMobile ? 22 : 45;
+const particleCount = isMobile ? 14 : 45;
 const shapes = ['🎈', '🎉', '🎂', '🎁', '✨', '💖', '🌸', '💫', '❤️'];
 const cakeBuildDuration = 4800;
 
@@ -37,7 +43,7 @@ function revealGift() {
     gift.classList.add('opened');
 
     // Trigger spectacular burst
-    triggerBurst(isMobile ? 22 : 80);
+    triggerBurst(isMobile ? 14 : 80);
 
     document.getElementById('bgMusic').play();
 
@@ -393,7 +399,7 @@ function createFirework(x, y, heightBoost) {
 }
 
 function createFireworkBurst(x, y) {
-    const letterCount = isMobile ? 5 : 10;
+    const letterCount = isMobile ? 10 : 10;
     const sparkleCount = isMobile ? 12 : 25;
     for (let i = 0; i < letterCount; i++) createFireworkParticle(x, y, false);
     for (let i = 0; i < sparkleCount; i++) createFireworkParticle(x, y, true);

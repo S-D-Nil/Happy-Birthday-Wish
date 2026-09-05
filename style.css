@@ -508,7 +508,7 @@
 
         .envelope-controls {
             text-align: center;
-            margin-top: 30px;
+            margin-top: 50px;
         }
 
         .envelope-controls button {
@@ -540,7 +540,7 @@
             position: relative;
             width: 400px;
             height: 300px;
-            top: 120px;
+            top: 140px;
             margin: 0 auto;
             perspective: 1000px;
             border-bottom-left-radius: 8px;
